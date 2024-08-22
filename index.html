@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 25vh; /* Aqui para diminuir a distância da linha dos botões*/
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      top: 0;
+    }
+
+    .button {
+      padding: 10px 20px;
+      /*border: none;*/
+      border-radius: 30px 30px;
+      background-color: white; /* Cor do botão "Sobre" */
+      color: black;
+      cursor: pointer;
+      border: 2px solid #ddd;
+    }
+
+    .button-home {
+      padding: 10px 20px;
+      /*border: none;*/
+      border-radius: 30px 30px;
+      background-color: white; /* Cor do botão "Home" */
+      color: black;
+      cursor: pointer;
+      border: 2px solid #ddd;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10%;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: none; /* Inicialmente o cartão está oculto */
+      border: 2px solid #ddd;
+      width: fit-content;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      flex-direction: column; 
+      position: relative;
+      margin-top: 50px; 
+      margin-bottom: 50px;
+      padding-bottom: 20px;
+    }
+
+    .info-container {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      margin-top: 20px; 
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .info h2 {
+      margin-bottom: 10px;
+    }
+
+    .line2 {
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      margin-top: 0;
+      position: fixed;
+    }
+
+    .line3 {
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      margin-top: 5%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .line-container {
+      display: flex;
+      justify-content: center; 
+      width: 100%; 
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="buttons">
+      <button class="button" id="sobreButton">Sobre</button>
+      <button class="button-home" id="homeButton">Home</button>
+    </div>
+  </div>
+  
+  <div class="line2"></div>
+  
+  <div class="info-container">
+    <div class="info info-section" position=center>
+      <div class="info">
+        <h2>GIOVANNA SOPRANO</h2>
+        <div class="line-container"> <div class="line3"></div> </div>
+        <h2>OPERADORA DE SITE</h2>
+      </div>
+      </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card" id="card">
+      <p>Olá, meu nome é Giovanna! Possuo técnico em informática e sou graduanda de Sistemas de Informação. Gosto da área de gestão de TI e eventualmente crio alguns projetos. Estou ansiosa para me conectar com pessoas que compartilham interesses similares e estou aberta a novas ideias e perspectivas!
+      Obrigada por dedicar um tempo para me conhecer melhor.</p>
+    </div>
+  </div>
+
+  <div class="line2"></div>
+
+  <script>
+    const sobreButton = document.getElementById('sobreButton');
+    const homeButton = document.getElementById('homeButton');
+    const card = document.getElementById('card');
+    const infoSection = document.querySelector('.info-section');
+
+    sobreButton.addEventListener('click', () => {
+      card.style.display = 'block';
+      homeButton.style.display = 'block';
+      infoSection.style.display = 'none';
+
+    // Center the card (we'll use flexbox for this)
+      card.style.margin = '0 auto';
+    });
+
+    homeButton.addEventListener('click', () => {
+      card.style.display = 'none';
+      sobreButton.style.display = 'block';
+      infoSection.style.display = 'block';
+
+    // Center the card (we'll use flexbox for this)
+      card.style.margin = '0 auto';
+    });
+    /* inspiração: https://www.katherineoelsner.com/*/
+  </script>
+</body>
+</html>
+
